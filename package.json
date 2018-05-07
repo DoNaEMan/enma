@@ -1,0 +1,36 @@
+{
+  "name": "enma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoNaEMan/enma.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoNaEMan/enma/issues"
+  },
+  "homepage": "https://github.com/DoNaEMan/enma#readme",
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.2.3",
+    "css-loader": "^0.28.8",
+    "html-webpack-plugin": "^2.30.1",
+    "loader-utils": "^1.1.0",
+    "redux-logger": "^3.0.6",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.10.1",
+    "webpack-html-plugin": "^0.1.1"
+  }
+}
