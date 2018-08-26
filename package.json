@@ -1,7 +1,7 @@
 {
-  "name": "{{name}}",
+  "name": "",
   "version": "1.0.0",
-  "description": "{{description}}",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node scripts/start.js",
@@ -12,34 +12,34 @@
     "type": "git",
     "url": "git+https://github.com/DoNaEMan/enma.git"
   },
-  "author": "{{author}}",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DoNaEMan/enma/issues"
   },
   "homepage": "https://github.com/DoNaEMan/enma#readme",
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "copy-webpack-plugin": "^4.2.3",
-    "css-loader": "^0.28.8",
-    "html-webpack-plugin": "^2.30.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "loader-utils": "^1.1.0",
     "redux-logger": "^3.0.6",
-    "webpack": "^4.8.1",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^2.10.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.6",
     "webpack-html-plugin": "^0.1.1"
   }
 }
