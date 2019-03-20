@@ -76,14 +76,8 @@ app.use(async (ctx, next) => {
 
   console.log(3333333333333, html);
 
-  const frontComponents = renderToNodeStream(html);
-
-  frontComponents.on('end', _ => {
-    console.log(11111111111111, _);
-  });
-
   await ctx.render(`client/index.html`,{
-    root: renderToNodeStream(html),
+    root: renderToString(html),
   });
 
 });
