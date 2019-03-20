@@ -1,28 +1,12 @@
-import React from 'react'
-import {
-  HashRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
 
-import A from './pages/testA/index'
-import B from './pages/testB/index'
-
-const Home = () => (
-  <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/A">A</Link>
-        </li>
-        <li>
-          <Link to="/B">B</Link>
-        </li>
-      </ul>
-      <Route path="/A" component={A} />
-      <Route path="/B" component={B} />
-    </div>
-  </Router>
-)
-
-export default Home
+const App = ({ route }) => (
+  <div>
+    <Link to='/a'><button>A</button></Link>
+    <Link to='/b'><button>B</button></Link>
+    {renderRoutes(route)}
+  </div>
+);
+export default App;
