@@ -6,9 +6,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div className={styles['carousel-wrap']}>
-        <i></i>
+        <i />
         A
       </div>
     );
   }
-};
+}

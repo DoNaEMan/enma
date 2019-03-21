@@ -2,17 +2,17 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const common = require('./webpack.common.js');
 const path = require('path');
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   entry: {
-    index: ['webpack-hot-middleware/client', './client/index.js']
+    index: ['webpack-hot-middleware/client', './client/index.js'],
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   devtool: 'inline-source-map',
   module: {
@@ -25,14 +25,14 @@ module.exports = merge(common, {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[path][name]__[local]'
-            }
-          }
-        ]
+              localIdentName: '[path][name]__[local]',
+            },
+          },
+        ],
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
       {
         test: /\.js$/,
@@ -40,10 +40,10 @@ module.exports = merge(common, {
         loader: 'babel-loader',
         options: {
           presets: ['env', 'react'],
-          plugins: ['syntax-dynamic-import', 'transform-decorators-legacy']
-        }
-      }
-    ]
+          plugins: ['syntax-dynamic-import', 'transform-decorators-legacy'],
+        },
+      },
+    ],
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
@@ -52,9 +52,9 @@ module.exports = merge(common, {
       template: path.resolve(__dirname, './template/index.html'),
       filename: path.resolve(__dirname, './client/index.html'),
       alwaysWriteToDisk: true,
-      title: 'demo'
+      title: 'demo',
     }),
-    new HtmlWebpackHarddiskPlugin()
+    new HtmlWebpackHarddiskPlugin(),
   ],
   optimization: {
     splitChunks: {
@@ -64,15 +64,15 @@ module.exports = merge(common, {
           test: /[\\/]node_modules[\\/]/,
           minChunks: 1,
           priority: 10,
-          chunks: 'initial' // 只打包初始时依赖的第三方
+          chunks: 'initial', // 只打包初始时依赖的第三方
         },
         commons: {
           test: /[\\/]src[\\/]js[\\/]/,
           minChunks: 2,
-          reuseExistingChunk: true
-        }
-      }
-    }
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
-  mode: 'development'
+  mode: 'development',
 });

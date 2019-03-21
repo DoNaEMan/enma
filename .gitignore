@@ -68,3 +68,5 @@ typings/
 **/.DS_Store
 
 .vscode
+
+/client/index.html

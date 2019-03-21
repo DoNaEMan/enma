@@ -3,19 +3,19 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const common = require('./webpack.common.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   entry: {
-    index: './client/index.js'
+    index: './client/index.js',
   },
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   devtool: 'null',
   module: {
@@ -29,15 +29,15 @@ module.exports = merge(common, {
               loader: 'css-loader',
               options: {
                 modules: true,
-                localIdentName: '[path][name]__[local]'
-              }
-            }
-          ]
-        })
+                localIdentName: '[path][name]__[local]',
+              },
+            },
+          ],
+        }),
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
       {
         test: /\.js$/,
@@ -45,25 +45,25 @@ module.exports = merge(common, {
         loader: 'babel-loader',
         options: {
           presets: ['env', 'react'],
-          plugins: ['syntax-dynamic-import', 'transform-decorators-legacy']
-        }
-      }
-    ]
+          plugins: ['syntax-dynamic-import', 'transform-decorators-legacy'],
+        },
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './template/index.html'),
       filename: path.resolve(__dirname, './client/index.html'),
-      title: 'demo'
+      title: 'demo',
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new ExtractTextPlugin('style.css'),
     new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g
-    })
+      assetNameRegExp: /\.css$/g,
+    }),
   ],
   optimization: {
     splitChunks: {
@@ -73,15 +73,15 @@ module.exports = merge(common, {
           test: /[\\/]node_modules[\\/]/,
           minChunks: 1,
           priority: 10,
-          chunks: 'initial' // 只打包初始时依赖的第三方
+          chunks: 'initial', // 只打包初始时依赖的第三方
         },
         commons: {
           test: /[\\/]src[\\/]js[\\/]/,
           minChunks: 2,
-          reuseExistingChunk: true
-        }
-      }
-    }
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
-  mode: 'production'
+  mode: 'production',
 });

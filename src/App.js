@@ -4,8 +4,8 @@ import { renderRoutes } from 'react-router-config';
 
 const App = ({ route }) => (
   <div>
-    <Link to='/a'><button>A</button></Link>
-    <Link to='/b'><button>B</button></Link>
+    <Link to="/a"><button>A</button></Link>
+    <Link to="/b"><button>B</button></Link>
     {renderRoutes(route)}
   </div>
 );

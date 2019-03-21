@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "build": "cross-env ENV=prd webpack --config webpack.prd.js && node ./server/server.prd.js",
-    "dev": "cross-env ENV=dev nodemon ./server/server.dev.js"
+    "dev": "cross-env ENV=dev nodemon ./server/server.dev.js",
+    "eslint:fix": "./node_modules/.bin/eslint . --ext .js --fix"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
     "babel-register": "^6.26.0",
     "css-modules-require-hook": "^4.2.3",
     "ejs": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "html-webpack-harddisk-plugin": "^1.0.1",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
@@ -55,8 +58,9 @@
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",

@@ -5,11 +5,11 @@ export default [
   {
     path: '/a',
     exact: true,
-    component: TestA
+    component: TestA,
   },
   {
     path: '/b',
     exact: true,
-    component: TestB
-  }
+    component: TestB,
+  },
 ];
